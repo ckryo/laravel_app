@@ -38,16 +38,4 @@ class ModelMakeCommand extends GeneratorCommand
     {
         return __DIR__.'/stubs/model.stub';
     }
-
-    /**
-     * Get the default namespace for the class.
-     *
-     * @param  string  $rootNamespace
-     * @return string
-     */
-    protected function getDefaultNamespace($rootNamespace)
-    {
-        return $rootNamespace . '\Models';
-    }
-
 }

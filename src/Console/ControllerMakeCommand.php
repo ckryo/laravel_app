@@ -43,33 +43,6 @@ class ControllerMakeCommand extends GeneratorCommand
     }
 
     /**
-     * 命名空间
-     *
-     * @param  string  $rootNamespace
-     * @return string
-     */
-    protected function getDefaultNamespace($rootNamespace)
-    {
-        return $rootNamespace.'\Controllers';
-    }
-
-    /**
-     * Build the class with the given name.
-     *
-     * Remove the base controller import if we are already in base namespace.
-     *
-     * @param  string  $name
-     * @return string
-     */
-    protected function buildClass($name)
-    {
-        $replace = [];
-        return str_replace(
-            array_keys($replace), array_values($replace), parent::buildClass($name)
-        );
-    }
-
-    /**
      * Get the console command options.
      *
      * @return array

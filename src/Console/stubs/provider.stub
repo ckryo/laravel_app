@@ -1,6 +1,6 @@
 <?php
 
-namespace DummyNamespace;
+namespace DummyRootNamespace;
 
 use Illuminate\Support\ServiceProvider;
 
