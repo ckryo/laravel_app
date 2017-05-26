@@ -35,7 +35,7 @@ class ModelMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Controllers';
+        return $rootNamespace.'\Models';
     }
 
 
