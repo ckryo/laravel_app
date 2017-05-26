@@ -43,6 +43,17 @@ class ControllerMakeCommand extends GeneratorCommand
     }
 
     /**
+     * 命名空间
+     *
+     * @param  string  $rootNamespace
+     * @return string
+     */
+    protected function getDefaultNamespace($rootNamespace)
+    {
+        return $rootNamespace.'\Controllers';
+    }
+
+    /**
      * Get the console command options.
      *
      * @return array
