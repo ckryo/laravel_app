@@ -3,7 +3,9 @@
 namespace Ckryo\Laravel\App\Providers;
 
 use Illuminate\Foundation\Application;
+use Illuminate\Routing\Router;
 use Illuminate\Routing\UrlGenerator;
+use Illuminate\Support\Facades\Route;
 
 trait RouteServiceExtension
 {
@@ -12,7 +14,7 @@ trait RouteServiceExtension
      * 执行路由加载方法
      * @return mixed
      */
-    abstract function mapRoutes ();
+    abstract function mapRoutes (Router $router);
 
     /**
      * 获取 app 实例
@@ -34,7 +36,10 @@ trait RouteServiceExtension
         if ($this->get_app()->routesAreCached()) {
             $this->loadCachedRoutes();
         } else {
-            $this->mapRoutes();
+            $namespace = $this->namespace ?: '';
+            Route::namespace($namespace)->group(function ($router) {
+                return $this->mapRoutes($router);
+            });
 
             $this->get_app()->booted(function () {
                 $this->get_app()['router']->getRoutes()->refreshNameLookups();
