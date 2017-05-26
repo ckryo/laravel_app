@@ -3,9 +3,9 @@
 namespace DummyNamespace;
 
 use Illuminate\Http\Request;
-use Ckryo\Laravel\App\Http\Controllers\Controller;
+use Ckryo\Laravel\App\Http\Controllers\Controller as BaseController;
 
-class DummyClass extends Controller
+class DummyClass extends BaseController
 {
     /**
      * Display a listing of the resource.
