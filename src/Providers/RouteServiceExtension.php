@@ -26,7 +26,7 @@ trait RouteServiceExtension
      * @return Application
      */
     function get_app () {
-        return $this->get_app();
+        return $this->app;
     }
 
     /**
