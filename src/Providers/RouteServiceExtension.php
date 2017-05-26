@@ -9,13 +9,6 @@ trait RouteServiceExtension
 {
 
     /**
-     * 声明控制器默认命名空间
-     *
-     * @var string|null
-     */
-    protected $namespace;
-
-    /**
      * 执行路由加载方法
      * @return mixed
      */
@@ -57,7 +50,7 @@ trait RouteServiceExtension
      */
     protected function setRootControllerNamespace()
     {
-        if (! is_null($this->namespace)) {
+        if (property_exists($this, 'namespace')) {
             $this->get_app()[UrlGenerator::class]->setRootControllerNamespace($this->namespace);
         }
     }
