@@ -19,7 +19,7 @@ trait RouteServiceExtension
      * 执行路由加载方法
      * @return mixed
      */
-    abstract function mapRoute ();
+    abstract function mapRoutes ();
 
     /**
      * 获取 app 实例
@@ -41,7 +41,7 @@ trait RouteServiceExtension
         if ($this->get_app()->routesAreCached()) {
             $this->loadCachedRoutes();
         } else {
-            $this->mapRoute();
+            $this->mapRoutes();
 
             $this->get_app()->booted(function () {
                 $this->get_app()['router']->getRoutes()->refreshNameLookups();
