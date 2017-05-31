@@ -13,9 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \Ckryo\Laravel\App\Console\ControllerMakeCommand::class,
-        \Ckryo\Laravel\App\Console\ModelMakeCommand::class,
-        \Ckryo\Laravel\App\Console\ProviderMakeCommand::class
+        ControllerMakeCommand::class,
+        ModelMakeCommand::class,
+        ProviderMakeCommand::class,
+        SrcNameCommand::class
     ];
 
     /**
