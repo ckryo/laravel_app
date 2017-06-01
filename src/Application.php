@@ -10,6 +10,8 @@ namespace Ckryo\Laravel\App;
 class Application extends \Illuminate\Foundation\Application
 {
 
+    private $app_path = 'app';
+
     /**
      * Get the path to the application "src" directory.
      *
@@ -18,17 +20,19 @@ class Application extends \Illuminate\Foundation\Application
      */
     public function path($path = '')
     {
-        return $this->basePath.DIRECTORY_SEPARATOR.'src'.($path ? DIRECTORY_SEPARATOR.$path : $path);
+        return $this->basePath.DIRECTORY_SEPARATOR.$this->app_path.($path ? DIRECTORY_SEPARATOR.$path : $path);
     }
 
     /**
      * Create a new Illuminate application instance.
      *
      * @param  string|null  $basePath
+     * @param  string  $app_path
      * @return void
      */
-    public function __construct($basePath = null)
+    public function __construct($basePath = null, $app_path = 'app')
     {
+        $this->app_path = $app_path;
         parent::__construct($basePath);
 
         $this->loadDefaultKernel();
